@@ -1,0 +1,1 @@
+crond -l 2 -f && nginx -g daemon off
