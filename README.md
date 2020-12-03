@@ -75,5 +75,5 @@ After  you will run the docker container three persistent folders will be create
 **letsencrypt** - folder for Let's Encrypt data including your certificates. This folder is mapped to /etc/letsencrypt folder inside your docker container. 
 
 
-_I left plenty of comments inside install.sh script and Dockerfile, so feel free to play change, and improve. Just do not forget to share your improvements with me :) _
+*I left plenty of comments inside install.sh script and Dockerfile, so feel free to play change, and improve. Just do not forget to share your improvements with me :)*
 
