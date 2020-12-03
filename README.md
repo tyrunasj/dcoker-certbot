@@ -38,7 +38,7 @@ Edit enginx.conf file by adding as many server blocks as many domains/subdomains
 Change values of server_name and root directives for each domain/subdomain.
 
 #### install.sh config
-Configuration of bash script install.sh is very straight forward. First six lines devines values for variables that are used later on in the script
+Configuration of bash script install.sh is very straight forward. First six lines define values for variables that are used later on in the script.
 
 **domains** - you should define the array of domains. Each domain has to be separated by the space. 
 ```bash
