@@ -1,4 +1,4 @@
-# dcoker-certbot
+# docker-certbot
 This "App" is intended for those who'd like to build and run fast web frontend projects in the docker with ssl certificates. 
 
 ## Table of Contents
