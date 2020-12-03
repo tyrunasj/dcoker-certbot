@@ -1,17 +1,17 @@
 #!/bin/bash
 
-domains=(smcloud.tyras.dev) # You can name more than one domain separeiting them by space 
+domains=(one.tyras.dev two.tyras.dev) # You can name more than one domain separeiting them by space 
 rsa_key_size=4096
 data_path="./"
 email="tyrunas@softpoint.lt" # Adding a valid address is strongly recommended
-staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits - it uses Let's encrypt staging enviroment insted of production
-docker_user="tyrunas" #your docker user in docker hub
-image_name="nginx-certbot"
+staging=0 # 1 use staging Let's Encryp enviroment , 0 1 use production Let's Encryp enviroment
+docker_user="tyrunas" #your docker user in docker hub (optional), may be used for docker push later on 
+image_name="nginx-certbot" # uses as image name as well as contianer name
 
 
 
 echo "### Creating Data Directories ..."
-mkdir -p ./data/nginx
+mkdir -p ./data/nginx          
 mkdir -p ./data/letsencrypt
 mkdir -p ./data/www/certbot
 echo "================================================================="
@@ -33,6 +33,7 @@ domain_args=""
 for domain in "${domains[@]}"; do
   domain_args="$domain_args -d $domain"
 done
+echo "DOMAINS ARE: "$domain_args
 # Select appropriate email arg
 case "$email" in
   "") email_arg="--register-unsafely-without-email" ;;
@@ -42,4 +43,3 @@ esac
 if [ $staging != "0" ]; then staging_arg="--staging"; fi
 docker container exec -ti $image_name certbot  --nginx -w /usr/share/nginx/html/certbot $staging_arg $email_arg  $domain_args --rsa-key-size $rsa_key_size --agree-tos --eff-email --keep-until-expiring
 echo "================================================================="
-#docker container exec -ti $image_name certbot "certonly --webroot -w /usr/share/nginx/html/certbot $staging_arg $email_arg $domain_args --rsa-key-size $rsa_key_size --agree-tos"    
