@@ -1,5 +1,5 @@
 # docker-certbot
-This "App" is intended for those who'd like to build and run fast web frontend projects in the docker with ssl certificates. 
+Build minimal docker with nginx and Let's Encrypt certificates which are managed by certbot and renewed according to crontab schedule. Use it for web site and frontend applications.
 
 ## Table of Contents
  - [Features](#features)
