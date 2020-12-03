@@ -51,7 +51,7 @@ domains=(www.example.com app.project.org)
 
 **docker_user (optional)** - in case you would like to reuse the image later on by pushing it to docker hub. 
 
-**image_name** - it is just the docker image name that will be build using Dockerfile. You can change it to any name you like.
+**image_name** - it is just the docker image name that will be built using instructions in Dockerfile. You can change it to any name you'd like.
 
 ## Installing
 Install docker first: 
