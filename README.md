@@ -68,6 +68,7 @@ chmod +x install.sh
 
 ## Usage
 After  you will run the docker container three persistent folders will be created:
+
 **./nginx** - folder with actual nginx default.conf file that is used by nginx inside a running container. This folder is mapped to /etc/nginx/conf.d folder inside your docker container. 
 
 **www** -  this folder is dedicated to your website or frontend application data. This folder is mapped to /usr/share/nginx/html folder inside your docker container. 
