@@ -3,8 +3,9 @@ This "App" is intended for those who'd like to build and run fast web frontend p
 
 ## Table of Contents
  - [Features](#features)
- - [Configuring](#installing)
+ - [Configuring](#configuring)
  - [Installing](#installing)
+ - [Usage](#usage)
 
 
 
@@ -64,4 +65,12 @@ Create image and run docker:
 chmod +x install.sh
 ./install.sh
 ```
+
+## Usage
+After  you will run the docker container three persistent folders will be created:
+**./nginx** - folder with actual nginx default.conf file that is used by nginx inside a running container. This folder is mapped to /etc/nginx/conf.d folder inside your docker container. 
+**www** -  this folder is dedicated to your website or frontend application data. This folder is mapped to /usr/share/nginx/html folder inside your docker container. 
+**letsencrypt** - folder for Let's Encrypt data including your certificates. This folder is mapped to /etc/letsencrypt folder inside your docker container. 
+
+_I left plenty of comments inside install.sh script and Dockerfile, so feel free to play change, and improve. Just do not forget to share your improvements with me :) _
 
